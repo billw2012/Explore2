@@ -1,0 +1,17 @@
+<effect name = "[TEMPLATE]">
+  <state
+    GL_DEPTH_TEST = "false"
+    GL_CULL_FACE = "false"
+ />
+  <vert_program>
+    <file name = "[TEMPLATE]_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+  </vert_program>
+  <frag_program>
+    <file name = "[TEMPLATE]_fs.glsl"/>
+    <!-- static parameters -->
+	  <map_param source = "Texture" target = "texture" />
+    <!-- dynamic parameters -->
+    
+  </frag_program>
+</effect>

@@ -1,0 +1,14 @@
+[
+	{
+		"text":"Debug mode",
+		"description":"Enter debug mode, free cam etc."
+	},
+	{
+		"text":"Options",
+		"description":"Modify settings etc."
+	},
+	{
+		"text":"Exit",
+		"description":"Fly you fools!"
+	}
+]

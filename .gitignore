@@ -1,0 +1,58 @@
+# Build output
+build/
+out/
+bin/
+*.exe
+*.dll
+*.lib
+*.pdb
+*.ilk
+*.exp
+*.obj
+*.o
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CMakeScripts/
+install_manifest.txt
+CTestTestfile.cmake
+_deps/
+
+# Visual Studio
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.suo
+*.user
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.VC.opendb
+UpgradeLog.XML
+
+# Rider / JetBrains
+.idea/
+*.iml
+
+# Binary archives
+*.7z
+
+# AtmosphereTest generated images
+AtmosphereTest/*.png
+AtmosphereTest/Images/
+
+# Log files
+*.log
+GLLog.txt
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini

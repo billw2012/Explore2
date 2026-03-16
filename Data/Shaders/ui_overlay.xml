@@ -1,0 +1,19 @@
+<effect name = "ui_overlay">
+  <state
+    GL_DEPTH_TEST = "false"
+    GL_CULL_FACE = "false"
+    GL_BLEND = "true"
+    glBlendFunc = "GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA"
+ />
+  <vert_program>
+    <file name = "ui_overlay_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+  </vert_program>
+  <frag_program>
+    <file name = "ui_overlay_fs.glsl"/>
+    <!-- static parameters -->
+    <map_param source = "UITexture" target = "uiTexture" />
+    <!-- dynamic parameters -->
+    
+  </frag_program>
+</effect>

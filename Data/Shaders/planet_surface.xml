@@ -1,0 +1,31 @@
+<effect name = "planet_surface">
+  <state
+    GL_DEPTH_TEST = "true"
+    GL_CULL_FACE = "true"
+  />
+  <vert_program>
+    <file name = "planet_surface_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+    <map_param source = "MODELVIEWMAT" target = "uModelView" />
+  </vert_program>
+  <frag_program>
+    <file name = "planet_surface_fs.glsl"/>
+    <map_param source = "ColourTexture" target = "uColourTexture" />
+    <map_param source = "NormalTexture" target = "uNormalTexture" />
+    <map_param source = "HeightTexture" target = "uHeightTexture" />
+    <map_param source = "MODELVIEWMAT" target = "uModelView" />
+    <map_param source = "PlanetIndex" target = "uPlanetIndex" />
+  </frag_program>
+  <shadow_vert_program>
+    <file name = "planet_surface_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+    <map_param source = "MODELVIEWMAT" target = "uModelView" />
+  </shadow_vert_program>  
+  <shadow_frag_program>
+    <file name = "general_shadow_fs.glsl"/>
+  </shadow_frag_program>
+  <shadow_state
+    GL_DEPTH_TEST = "true"
+    GL_CULL_FACE = "false"
+  />
+</effect>

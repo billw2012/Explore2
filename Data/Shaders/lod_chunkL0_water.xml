@@ -1,0 +1,20 @@
+<effect name = "lod_chunkL0_water">
+  <state
+    GL_DEPTH_TEST = "true"
+    GL_CULL_FACE = "true"
+  />
+  <vert_program>
+    <file name = "lod_chunkL0_water_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+    <map_param source = "MODELVIEWMAT" target = "uModelView" />
+    <map_param source = "PlanetCenterOffset" target = "uPlanetCenterOffset" />
+  </vert_program>
+  <frag_program>
+    <file name = "lod_chunkL0_water_fs.glsl"/>
+    <map_param source = "ParentColourTexture" target = "uParentColourTexture" />
+    <map_param source = "ParentNormalTexture" target = "uParentNormalTexture" />
+    <map_param source = "BlendFactor" target = "uBlendFactor" />
+    <map_param source = "MODELVIEWMAT" target = "uModelView" />
+    <map_param source = "PlanetIndex" target = "uPlanetIndex" />
+  </frag_program>
+</effect>

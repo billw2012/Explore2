@@ -1,0 +1,22 @@
+<effect name = "planet_billboard">
+  <state
+    GL_DEPTH_TEST = "false"
+    GL_CULL_FACE = "false"
+    GL_BLEND = "true"
+    glBlendFuncSeparate = "GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA, GL_ZERO, GL_ONE"
+  />
+  <vert_program>
+    <file name = "planet_billboard_vs.glsl"/>
+    <map_param source = "MODELVIEWMAT" target = "uModelView" />
+    <map_param source = "PROJMAT" target = "uProj" />
+    <map_param source = "VIEWPORT" target = "uViewport" />
+    <map_param source = "Size" target = "uSize" />
+    <map_param source = "MinimumSize" target = "uMinimumSize" />
+  </vert_program>
+  <frag_program>
+    <file name = "planet_billboard_fs.glsl"/>
+    <!-- static parameters -->
+    <map_param source = "Texture" target = "uTexture" />
+    <!-- dynamic parameters -->
+  </frag_program>
+</effect>

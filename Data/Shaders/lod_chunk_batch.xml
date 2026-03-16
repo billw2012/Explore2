@@ -1,0 +1,29 @@
+<effect name = "lod_chunk_batch">
+  <state
+    GL_DEPTH_TEST = "true"
+    GL_CULL_FACE = "true"
+  />
+  <vert_program>
+    <file name = "lod_chunk_batch_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+    <map_param source = "MODELVIEWMAT" target = "uModelView" />
+  </vert_program>
+  <frag_program>
+    <file name = "lod_chunk_batch_fs.glsl"/>
+    <map_param source = "ColourTexture" target = "uColourTexture" />
+    <map_param source = "NormalTexture" target = "uNormalTexture" />
+    <map_param source = "MODELVIEWMAT" target = "uModelView" />
+    <map_param source = "MaterialID" target = "uMaterialID" />
+  </frag_program>
+  <shadow_state
+    GL_DEPTH_TEST = "true"
+    GL_CULL_FACE = "false"
+  />
+  <shadow_vert_program>
+    <file name = "position_only_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+  </shadow_vert_program>
+  <shadow_frag_program>
+    <file name = "general_shadow_fs.glsl"/>
+  </shadow_frag_program>
+</effect>

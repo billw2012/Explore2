@@ -1,0 +1,33 @@
+<effect name = "atmosphere_attenuate">
+  <state
+    GL_DEPTH_TEST = "false"
+    GL_CULL_FACE = "false"
+  />
+  <vert_program>
+    <file name = "atmosphere_attenuate_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+  </vert_program>
+  <frag_program>
+    <file name = "atmosphere_attenuate_fs.glsl"/>
+    
+    <!-- static atmosphere parameters -->
+    <map_param source = "OuterRadiusSquared" target = "uOuterRadiusSquared" />
+    <map_param source = "InnerRadius" target = "uInnerRadius" />
+    <map_param source = "OneOverAtmosphereDepth" target = "uOneOverAtmosphereDepth" />
+    <map_param source = "Beta" target = "uBeta" />
+    <map_param source = "OpticalDepthRayleighTexture" target = "uOpticalDepthRayleighTexture" />
+    <map_param source = "OpticalDepthMieTexture" target = "uOpticalDepthMieTexture" />
+    <map_param source = "OpticalDepthRayleighTextureIndex" target = "uOpticalDepthRayleighTextureIndex" />
+    <map_param source = "OpticalDepthMieTextureIndex" target = "uOpticalDepthMieTextureIndex" />
+
+    <!-- static parameters -->
+    <map_param source = "PBuffer" target = "uPBuffer" />
+    <map_param source = "AlbedoBuffer" target = "uAlbedoBufferTexture" />
+    <map_param source = "PositionBufferTexture" target = "uPositionBufferTexture" />
+
+    <!-- dynamic parameters -->
+    <map_param source = "CameraToPlanetMatrix" target = "uCameraToPlanetMatrix" />
+    <map_param source = "CameraPlanetLocal" target = "uCameraPlanetLocal" />
+
+  </frag_program>
+</effect>

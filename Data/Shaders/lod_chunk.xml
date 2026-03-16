@@ -1,0 +1,34 @@
+<effect name = "lod_chunk">
+  <state
+    GL_DEPTH_TEST = "true"
+    GL_CULL_FACE = "true"
+  />
+  <vert_program>
+    <file name = "lod_chunk_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+    <map_param source = "MODELVIEWMAT" target = "uModelView" />
+    <map_param source = "BlendFactor" target = "uBlendFactor" />
+  </vert_program>
+  <frag_program>
+    <file name = "lod_chunk_fs.glsl"/>
+    <map_param source = "MODELVIEWMAT" target = "uModelView" />
+    <map_param source = "BlendFactor" target = "uBlendFactor" />
+    <map_param source = "ColourTexture" target = "uColourTexture" />
+    <map_param source = "NormalTexture" target = "uNormalTexture" />
+    <map_param source = "ParentColourTexture" target = "uParentColourTexture" />
+    <map_param source = "ParentNormalTexture" target = "uParentNormalTexture" />
+    <map_param source = "PlanetIndex" target = "uPlanetIndex" />
+  </frag_program>
+  <shadow_state
+    GL_DEPTH_TEST = "true"
+    GL_CULL_FACE = "false"
+  />
+  <shadow_vert_program>
+    <file name = "lod_chunk_shadow_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+    <map_param source = "BlendFactor" target = "uBlendFactor" />
+  </shadow_vert_program>
+  <shadow_frag_program>
+    <file name = "general_shadow_fs.glsl"/>
+  </shadow_frag_program>
+</effect>

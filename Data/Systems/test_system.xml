@@ -1,0 +1,81 @@
+<solar_system name="test_system">
+  <body name="sol" type="sun">
+    <orbit 
+      orbital_tilt  ="0" 
+      long_of_peri  ="0" 
+      distance      ="0" 
+      orbit_period  ="0" 
+      eccentricity  ="0" 
+      offset        ="0" 
+      axial_tilt    ="0"
+      axial_period  ="0"
+      />
+    <light r="1" g="1" b="1"/>
+    <display
+     radius            ="695000"
+     seed              ="0"
+      />
+  </body>
+  <body name="earth" type="planet" parent="sol">
+    <orbit
+      orbital_tilt  ="0" 
+      long_of_peri  ="0" 
+      distance      ="1"
+      orbit_period  ="1" 
+      eccentricity  ="0" 
+      offset        ="0" 
+      axial_tilt    ="0" 
+      axial_period  ="1"
+      />
+    <display radius ="6378.1" water_radius ="6378.1" seed ="1">
+      <atmosphere 
+        atmospheric_depth ="200.0"
+        scale_height_rayleigh="6.5"
+        scale_height_mie  ="1.2"
+        terrain_height_scale="0.01"
+      />
+    </display>
+  </body>
+  <!-- <body name="jup" type="planet">
+    <orbit
+      orbital_tilt  ="0"
+      long_of_peri  ="0"
+      distance      ="2"
+      orbit_period  ="1"
+      eccentricity  ="0"
+      offset        ="0"
+      axial_tilt    ="0"
+      axial_period  ="1"
+      />
+    <display radius ="50000.0" water_radius ="0" seed ="1">
+      <atmosphere
+        atmospheric_depth ="1000.0"
+        scale_height_rayleigh="10.5"
+        scale_height_mie  ="2.2"
+        terrain_height_scale="0.01"
+      />
+    </display>
+  </body>
+  <body name="moon" type="planet" parent="earth">
+    <orbit
+      orbital_tilt  ="0"
+      long_of_peri  ="0"
+      distance      ="0.003"
+      orbit_period  ="0"
+      eccentricity  ="0"
+      offset        ="1"
+      axial_tilt    ="0"
+      axial_period  ="0"
+      />
+    <display
+      radius            ="6378.1"
+      water_radius      ="6378.1"
+      atmospheric_depth ="400.0"
+      seed              ="2"
+      terrain_height_scale="0.01"
+      mieU              ="0.85"
+      n                 ="1.0003"
+      Ns                ="0.055e27"
+      />
+  </body> !-->
+</solar_system>

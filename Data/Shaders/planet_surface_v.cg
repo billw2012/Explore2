@@ -1,0 +1,38 @@
+// float4x4 ModelViewProj : MODELVIEWPROJMAT;
+// 
+// sampler2D NormalTexture = sampler_state {
+// 	minFilter = Linear; 
+// 	magFilter = Linear; 
+// 	WrapS = Repeat; 
+// 	WrapT = Repeat; 
+// };
+// 
+// sampler2D ColourTexture = sampler_state {
+// 	minFilter = Linear; 
+// 	magFilter = Linear; 
+// 	WrapS = Repeat; 
+// 	WrapT = Repeat; 
+// };
+
+void planet_vs(
+	in float3 INposition : POSITION,
+	in float2 INuv : TEXCOORD0,
+	uniform float4x4 modelViewProj,
+	out float4 OUTposition : POSITION,
+	out float2 OUTuv : TEXCOORD0)
+{
+	OUTposition = mul(modelViewProj, float4(INposition + float3(10, 0, 0), 1));
+	OUTuv = INuv;
+}
+// 
+// technique glsl
+// {
+// 	pass
+// 	{
+// 		DepthTestEnable = true;
+// 		CullFaceEnable = true;
+// 		FrontFace = CCW;
+// 		VertexProgram =	compile glslv planet_vs(ModelViewProj);
+// 		FragmentProgram = compile glslf planet_fs();
+// 	}
+// }

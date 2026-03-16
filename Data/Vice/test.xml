@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="test">
+  
+  <property name="width" type="float" value="800"/>
+  <property name="height" type="float" value="600"/>
+
+  <element name="left_panel">
+    <property name="x" type="float" value="10"/>
+    <property name="y" type="float" value="10"/>
+    <property name="width" type="float" value="190"/>
+    <property name="height" type="float" value="580"/>
+    <property name="color" type="color" value="1 0 0 1"/>
+    <property name="layout_left" type="layout" value="min"/>
+    <property name="layout_top" type="layout" value="min"/>
+    <property name="layout_right" type="layout" value="min"/>
+    <property name="layout_bottom" type="layout" value="max"/>
+  </element>
+  
+  <element name="right_panel">
+    <property name="x" type="float" value="600"/>
+    <property name="y" type="float" value="10"/>
+    <property name="width" type="float" value="190"/>
+    <property name="height" type="float" value="580"/>
+    <property name="color" type="color" value="0 0 1 1"/>
+    <property name="layout_left" type="layout" value="max"/>
+    <property name="layout_top" type="layout" value="min"/>
+    <property name="layout_right" type="layout" value="max"/>
+    <property name="layout_bottom" type="layout" value="max"/>
+  </element>
+  
+  <element name="center_panel">
+    <property name="x" type="float" value="210"/>
+    <property name="y" type="float" value="10"/>
+    <property name="width" type="float" value="380"/>
+    <property name="height" type="float" value="580"/>
+    <property name="color" type="color" value= "1 1 1 1"/>
+    <property name="layout_left" type="layout" value="min"/>
+    <property name="layout_top" type="layout" value="min"/>
+    <property name="layout_right" type="layout" value="max"/>
+    <property name="layout_bottom" type="layout" value="max"/>
+  </element>
+  
+  <element name="center_top">
+    <property name="parent" type="string" value="center_panel"/>
+    <property name="x" type="float" value="10"/>
+    <property name="y" type="float" value="10"/>
+    <property name="width" type="float" value="360"/>
+    <property name="height" type="float" value="100"/>
+    <property name="color" type="color" value="1 0 1 1"/>
+    <property name="layout_left" type="layout" value="min"/>
+    <property name="layout_top" type="layout" value="min"/>
+    <property name="layout_right" type="layout" value="max"/>
+    <property name="layout_bottom" type="layout" value="min"/>
+  </element>
+
+  <component name="comp1" path="test2.xml">
+    <property name="parent" type="string" value="center_panel"/>
+    <property name="x" type="float" value="10"/>
+    <property name="y" type="float" value="120"/>
+    <property name="width" type="float" value="360"/>
+    <property name="height" type="float" value="100"/>
+    <property name="layout_left" type="layout" value="min"/>
+    <property name="layout_top" type="layout" value="min"/>
+    <property name="layout_right" type="layout" value="max"/>
+    <property name="layout_bottom" type="layout" value="max"/>
+  </component>
+ 
+  <animation>
+    
+  </animation>
+  
+  <script path="test.py"/>
+</component>

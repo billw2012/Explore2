@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<component name="test2">
+
+  <property name="width" type="float" value="260"/>
+  <property name="height" type="float" value="80"/>
+
+  <element name="left">
+    <property name="x" type="float" value="0"/>
+    <property name="y" type="float" value="0"/>
+    <property name="width" type="float" value="80"/>
+    <property name="height" type="float" value="80"/>
+    <property name="color" type="color" value="0.5 0.5 0.5 1"/>
+  </element>
+
+  <element name="center">
+    <property name="x" type="float" value="90"/>
+    <property name="y" type="float" value="0"/>
+    <property name="width" type="float" value="80"/>
+    <property name="height" type="float" value="80"/>
+    <property name="color" type="color" value="0.5 0.5 0.5 1"/>
+  </element>
+
+  <element name="right">
+    <property name="x" type="float" value="180"/>
+    <property name="y" type="float" value="0"/>
+    <property name="width" type="float" value="80"/>
+    <property name="height" type="float" value="80"/>
+    <property name="color" type="color" value="0.5 0.5 0.5 1"/>
+  </element>
+  <animation>
+
+  </animation>
+
+  <script path="test2.py"/>
+</component>

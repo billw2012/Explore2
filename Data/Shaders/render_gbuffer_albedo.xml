@@ -1,0 +1,18 @@
+<effect name = "render_gbuffer_albedo">
+  <state
+    GL_DEPTH_TEST = "false"
+    GL_CULL_FACE = "false"
+  />
+  <vert_program>
+    <file name = "render_gbuffer_albedo_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+  </vert_program>
+  <frag_program>
+    <file name = "render_gbuffer_albedo_fs.glsl"/>
+    <map_param source = "NormalBuffer" target = "uNormalBufferTexture" />
+    <map_param source = "AlbedoBuffer" target = "uAlbedoBufferTexture" />
+    <map_param source = "DepthBuffer" target = "uDepthBufferTexture" />
+    <map_param source = "WBuffer" target = "uWBufferTexture" />
+    <map_param source = "SpecularBuffer" target = "uSpecularBufferTexture" />
+  </frag_program>
+</effect>

@@ -1,0 +1,41 @@
+<effect name = "solar_light">
+  <state
+    GL_DEPTH_TEST = "false"
+    GL_CULL_FACE = "false"
+    GL_BLEND = "true"
+    glBlendFunc = "GL_ONE, GL_ONE"
+  />
+  <vert_program>
+    <file name = "light_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+  </vert_program>
+  <frag_program>
+    <file name = "solar_light_fs.glsl"/>
+
+    <!-- static atmosphere parameters -->
+    <map_param source = "InnerRadius" target = "uInnerRadius" />
+    <map_param source = "OneOverAtmosphereDepth" target = "uOneOverAtmosphereDepth" />
+    <map_param source = "Beta" target = "uBeta" />
+    <map_param source = "SurfaceLightingTextureIndex" target = "uSurfaceLightingTextureIndex" />
+    <map_param source = "OpticalDepthRayleighTextureIndex" target = "uOpticalDepthRayleighTextureIndex" />
+    <map_param source = "OpticalDepthMieTextureIndex" target = "uOpticalDepthMieTextureIndex" />
+    <map_param source = "SurfaceLightingTexture" target = "uSurfaceLightingTexture" />
+    <map_param source = "OpticalDepthRayleighTexture" target = "uOpticalDepthRayleighTexture" />
+    <map_param source = "OpticalDepthMieTexture" target = "uOpticalDepthMieTexture" />
+
+    <!-- static parameters -->
+    <map_param source = "LightColor" target = "uLightColor" />
+    <map_param source = "AlbedoBuffer" target = "uAlbedoBufferTexture" />
+    <map_param source = "NormalBuffer" target = "uNormalBufferTexture" />
+    <map_param source = "PositionBuffer" target = "uPositionBufferTexture" />
+
+    <!-- dynamic parameters -->
+    <map_param source = "CameraLocalLightPos" target = "uCameraLocalLightPos" />
+    <map_param source = "ShadowDepthTextures" target = "uShadowDepthTextures" />
+    <map_param source = "FarDistances" target = "uFarDist" />
+    <map_param source = "LightFrustumCount" target = "uFrustumCount" />
+    <map_param source = "LightFrustum" target = "uLightFrustum" />
+    <map_param source = "PlanetCenter" target = "uPlanetCenter" />
+
+  </frag_program>
+</effect>

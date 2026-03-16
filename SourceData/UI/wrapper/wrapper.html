@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+	<title>Edge always wanted to be a Wrapper</title>
+
+    <script type="text/javascript" charset="utf-8" src="page_a_edgePreload.js"></script>
+    <script type="text/javascript" charset="utf-8" src="page_b_edgePreload.js"></script>
+    <script type="text/javascript" charset="utf-8" src="page_c_edgePreload.js"></script>
+    <style>
+        .edgeLoad-PAGE_A { display:none; }
+        .edgeLoad-PAGE_B { display:none; }
+        .edgeLoad-PAGE_C { display:none; }
+		
+		#StageA {
+			position:absolute;
+			left:10px;
+			top:10px;
+			z-index: 1;
+		}
+		#StageB {
+			position:absolute;
+			left:10px;
+			top:10px;
+			z-index: 2;
+		}
+		#StageC {
+			position:absolute;
+			left:10px;
+			top:10px;
+			z-index: 3;
+		}
+    </style>
+
+	<script>
+		var wrapperCurrentPage = "PAGE_A";
+		var loadedComps = {};
+
+		AdobeEdge.bootstrapCallback(function(compId) {
+
+			return ;
+			loadedComps[compId] = AdobeEdge.getComposition(compId);
+			
+			// now it is safe to call into the and bind to things like...
+			AdobeEdge.Symbol.bindTimelineAction(compId, "stage", "Default Timeline", "complete", function(sym, e) {	
+				//loop
+				if(compId == wrapperCurrentPage) {
+					if (compId == "PAGE_A") {
+						wrapperCurrentPage = "PAGE_B";
+						$("#StageA").hide();
+						$("#StageB").show();
+					}
+					else if (compId == "PAGE_B") {
+						wrapperCurrentPage = "PAGE_C";
+						$("#StageB").hide();
+						$("#StageC").show();
+					}
+					else {
+						wrapperCurrentPage = "PAGE_A";
+						$("#StageC").hide();
+						$("#StageA").show();
+					}
+					
+					if(loadedComps[wrapperCurrentPage]) {
+						loadedComps[wrapperCurrentPage].getStage().play(0);
+					}
+					else {
+						//it will play itself when loaded
+					}
+				}
+
+		    });
+			
+		});
+	</script>
+
+</head>
+<body style="margin:0;padding:0;">
+	<div id="StageA" class="PAGE_A" style="position:absolute;
+			left:10px;
+			top:10px;
+			z-index: 1;">
+	</div>
+	<div id="StageB" class="PAGE_B" style="position:absolute;
+			left:10px;
+			top:10px;
+			z-index: 3;">
+	</div>
+	<div id="StageC" class="PAGE_C" style="position:absolute;
+			left:10px;
+			top:10px;
+			z-index: 2;">
+	</div>
+</body>
+</html>

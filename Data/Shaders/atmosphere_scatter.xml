@@ -1,0 +1,45 @@
+<effect name = "atmosphere_scatter">
+  <state
+    GL_DEPTH_TEST = "false"
+    GL_CULL_FACE = "false"
+    GL_BLEND = "true"
+    glDepthMask = "false"
+    glBlendFunc = "GL_ONE, GL_ONE"
+ />
+  <vert_program>
+    <file name = "atmosphere_scatter_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+  </vert_program>
+  <frag_program>
+    <file name = "atmosphere_scatter_fs.glsl"/>
+
+    <!-- static atmosphere parameters -->
+    <map_param source = "OuterRadiusSquared" target = "uOuterRadiusSquared" />
+    <map_param source = "InnerRadius" target = "uInnerRadius" />
+    <map_param source = "OneOverAtmosphereDepth" target = "uOneOverAtmosphereDepth" />
+    <map_param source = "Beta" target = "uBeta" />
+    <map_param source = "ScaleHeightRayleigh" target = "uScaleHeightRayleigh" />
+    <map_param source = "ScaleHeightMie" target = "uScaleHeightMie" />
+    <map_param source = "Is" target = "uIs" />
+    <map_param source = "OpticalDepthRayleighTexture" target = "uOpticalDepthRayleighTexture" />
+    <map_param source = "OpticalDepthMieTexture" target = "uOpticalDepthMieTexture" />
+    <map_param source = "KFrMieTexture" target = "uKFrMieTexture" />
+    <map_param source = "KFrRayleighTexture" target = "uKFrRayleighTexture" />
+    <map_param source = "OpticalDepthRayleighTextureIndex" target = "uOpticalDepthRayleighTextureIndex" />
+    <map_param source = "OpticalDepthMieTextureIndex" target = "uOpticalDepthMieTextureIndex" />
+    <map_param source = "KFrMieTextureIndex" target = "uKFrMieTextureIndex" />
+    <map_param source = "KFrRayleighTextureIndex" target = "uKFrRayleighTextureIndex" />
+
+    <!-- static parameters -->
+    <map_param source = "PlanetIndex" target = "uPlanetIndex" />
+    <map_param source = "AlbedoBufferTexture" target = "uAlbedoBufferTexture" />
+    <map_param source = "PositionBufferTexture" target = "uPositionBufferTexture" />
+    <map_param source = "NormalBufferTexture" target = "uNormalBufferTexture" />
+
+    <!-- dynamic parameters -->
+    <map_param source = "CameraToPlanetMatrix" target = "uCameraToPlanetMatrix" />
+    <map_param source = "CameraPlanetLocal" target = "uCameraPlanetLocal" />
+    <map_param source = "PlanetLocalLightPos" target = "uPlanetLocalLightPos" />
+    
+  </frag_program>
+</effect>

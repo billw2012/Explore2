@@ -1,0 +1,21 @@
+<effect name = "render_pbuffer">
+  <state
+    GL_DEPTH_TEST = "false"
+    GL_CULL_FACE = "false"
+  />
+  <vert_program>
+    <file name = "render_pbuffer_debug_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+  </vert_program>
+  <frag_program>
+    <file name = "render_pbuffer_debug_fs.glsl"/>
+    <map_param source = "ExposureCoeff" target = "uExposureCoeff" />
+    <map_param source = "PBuffer" target = "uPBuffer" />
+    <map_param source = "PBuffer0" target = "uPBuffer0" />
+    <map_param source = "AlbedoBuffer" target = "uAlbedoBufferTexture" />
+    <map_param source = "NormalBuffer" target = "uNormalBufferTexture" />
+    <map_param source = "PositionBuffer" target = "uPositionBufferTexture" />
+    <map_param source = "DepthBuffer" target = "uDepthBufferTexture" />
+    <map_param source = "DebugRenderMode" target = "uDebugRenderMode" />
+  </frag_program>
+</effect>

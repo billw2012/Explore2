@@ -1,0 +1,38 @@
+<effect name = "solar_light">
+  <state
+    GL_DEPTH_TEST = "false"
+    GL_CULL_FACE = "false"
+    GL_BLEND = "true"
+    glBlendFunc = "GL_ONE, GL_ONE"
+  />
+  <vert_program>
+    <file name = "light_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+  </vert_program>
+  <frag_program>
+    <file name = "solar_light_shadow_fs.glsl"/>
+
+    <map_param source = "SurfaceLightingTexture" target = "uSurfaceLightingTexture" />
+    <map_param source = "OpticalDepthTexture" target = "uOpticalDepthTexture" />
+    <map_param source = "InnerRadius" target = "uInnerRadius" />
+    <map_param source = "OneOverAtmosphereDepth" target = "uOneOverAtmosphereDepth" />
+    <map_param source = "4PiKOverWavelength4" target = "u4PiKOverWavelength4" />
+    <map_param source = "LightColor" target = "uLightColor" />
+    <map_param source = "LightDir" target = "uLightDir" />
+    <map_param source = "PlanetCenter" target = "uPlanetCenter" />
+
+    <map_param source = "ShadowDepthTextures" target = "uShadowDepthTextures" />
+    <map_param source = "FarDistances" target = "uFarDist" />
+    <map_param source = "LightFrustum0" target = "uLightFrustum0" />
+    <map_param source = "LightFrustum1" target = "uLightFrustum1" />
+    <map_param source = "LightFrustum2" target = "uLightFrustum2" />
+    <map_param source = "LightFrustum3" target = "uLightFrustum3" />
+
+
+    <map_param source = "NormalBuffer" target = "uNormalBufferTexture" />
+    <map_param source = "AlbedoBuffer" target = "uAlbedoBufferTexture" />
+    <map_param source = "SpecularBuffer" target = "uSpecularBufferTexture" />
+    <map_param source = "PositionBuffer" target = "uPositionBufferTexture" />
+    <map_param source = "DepthBuffer" target = "uDepthBufferTexture" />
+  </frag_program>
+</effect>

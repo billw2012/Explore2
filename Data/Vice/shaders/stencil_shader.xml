@@ -1,0 +1,15 @@
+<effect name = "draw_stencil_values">
+  <state
+    GL_DEPTH_TEST = "false"
+    GL_CULL_FACE = "false"
+    glDepthMask = "false"
+    glColorMask = "false, false, false, false"
+  />
+  <vert_program>
+    <file name = "stencil_shader_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+  </vert_program>
+  <frag_program>
+    <file name = "stencil_shader_fs.glsl"/>
+  </frag_program>
+</effect>

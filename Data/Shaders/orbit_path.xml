@@ -1,0 +1,22 @@
+<effect name = "orbit_path">
+  <state
+    GL_DEPTH_TEST = "false"
+    GL_CULL_FACE = "false"
+    glDepthMask = "false"
+    GL_BLEND = "true"
+    glBlendFunc = "GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA"
+   />
+  <vert_program>
+    <file name = "orbit_path_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+  </vert_program>
+  <frag_program>
+    <file name = "orbit_path_fs.glsl"/>
+    <!-- static atmosphere parameters -->
+
+    <!-- static parameters -->
+
+    <!-- dynamic parameters -->
+    
+  </frag_program>
+</effect>

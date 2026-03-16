@@ -1,0 +1,10 @@
+<effect name = "effect_name">
+	<vert_program>
+		<file name = "vs.glsl"/>
+		<map_param source = "ModelViewMatrix" target = "uModelViewMatrix" />
+	</vert_program>
+	<frag_program>
+		<file name = "fs.glsl"/>
+		<map_param source = "Color" target = "uColor" />
+	</frag_program>
+</effect>

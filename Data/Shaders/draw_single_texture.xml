@@ -1,0 +1,15 @@
+<effect name = "draw_single_texture">
+  <state
+    GL_DEPTH_TEST = "false"
+    GL_CULL_FACE = "false"
+  />
+  <vert_program>
+    <file name = "draw_single_texture_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+  </vert_program>
+  <frag_program>
+    <file name = "draw_single_texture_fs.glsl"/>
+    <map_param source = "Texture" target = "uColourTexture" />
+    <map_param source = "Scale" target = "uScale" />
+  </frag_program>
+</effect>

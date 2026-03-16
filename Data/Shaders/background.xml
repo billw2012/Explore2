@@ -1,0 +1,15 @@
+<effect name = "background">
+  <state
+    GL_DEPTH_TEST = "false"
+    glDepthMask = "false"
+    GL_CULL_FACE = "false"
+  />
+  <vert_program>
+    <file name = "background_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+    <map_param source = "MODELVIEWMAT" target = "uModelView" />
+  </vert_program>
+  <frag_program>
+    <file name = "background_fs.glsl"/>
+  </frag_program>
+</effect>

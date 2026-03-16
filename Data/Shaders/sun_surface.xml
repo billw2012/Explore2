@@ -1,0 +1,15 @@
+<effect name = "sun_surface">
+  <state
+    GL_DEPTH_TEST = "true"
+    GL_CULL_FACE = "true"
+  />
+  <vert_program>
+    <file name = "sun_surface_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+    <map_param source = "MODELVIEWMAT" target = "uModelView" />
+  </vert_program>
+  <frag_program>
+    <file name = "sun_surface_fs.glsl"/>
+    <map_param source = "Color" target = "uColor" />
+  </frag_program>
+</effect>

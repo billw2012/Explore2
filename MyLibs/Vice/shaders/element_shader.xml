@@ -1,0 +1,16 @@
+<effect name = "draw_single_texture">
+  <state
+    GL_DEPTH_TEST = "false"
+    GL_CULL_FACE = "false"
+    glDepthMask = "false"
+  />
+  <vert_program>
+    <file name = "element_shader_vs.glsl"/>
+    <map_param source = "MODELVIEWPROJMAT" target = "uModelViewProj" />
+  </vert_program>
+  <frag_program>
+    <file name = "element_shader_fs.glsl"/>
+    <map_param source = "background" target = "uBackgroundTexture" />
+    <map_param source = "color" target = "uColor" />
+  </frag_program>
+</effect>
