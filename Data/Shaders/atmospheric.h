@@ -2,10 +2,10 @@
 #if !defined(__EXPLORE2_ATMOSPHERIC_H__)
 #define __EXPLORE2_ATMOSPHERIC_H__
 
-#include "Math/vector2.hpp"
-#include "Math/vector3.hpp"
-#include "Math/matrix3.hpp"
-#include "Math/transformation.hpp"
+#include "Math/vector2.h"
+#include "Math/vector3.h"
+#include "Math/matrix3.h"
+#include "Math/transformation.h"
 
 namespace explore2 {;
 

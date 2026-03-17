@@ -9,9 +9,11 @@
     <property name="y" type="float" value="0"/>
     <property name="width" type="float" value="80"/>
     <property name="height" type="float" value="80"/>
+    <property name="text" type="string" value="test"/>
     <property name="color" type="color" value="0.5 0.5 0.5 1"/>
   </element>
 
+  <!--
   <element name="center">
     <property name="x" type="float" value="90"/>
     <property name="y" type="float" value="0"/>
@@ -27,9 +29,11 @@
     <property name="height" type="float" value="80"/>
     <property name="color" type="color" value="0.5 0.5 0.5 1"/>
   </element>
+  
   <animation>
 
   </animation>
-
+  -->
+  
   <script path="test2.py"/>
 </component>

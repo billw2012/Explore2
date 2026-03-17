@@ -6,6 +6,8 @@
 
 #include "planetgeometry.h"
 
+#include "Utils/Profiler.h"
+
 #include <vector>
 
 #include <unordered_set>
@@ -138,7 +140,8 @@ struct PlanetTextureGround : public PlanetTexture
 {
 	PlanetTextureGround() : PlanetTexture()
 	{
-		glbase::Texture::ptr tex(new glbase::Texture("../Data/PlanetTextures/Grass.png", glbase::LoadOptions::GenerateMipmaps));
+		glbase::Texture::ptr tex(new glbase::Texture());
+		tex->load("../Data/PlanetTextures/Grass.png", glbase::LoadOptions::GenerateMipmaps);
 		tex->generate_mipmaps();
 		set_texture(tex);
 	}
@@ -165,7 +168,8 @@ struct PlanetTextureWater : public PlanetTexture
 {
 	PlanetTextureWater() : _waterColour(0, 0, 255)
 	{
-		glbase::Texture::ptr tex(new glbase::Texture("../Data/PlanetTextures/Plains.png", glbase::LoadOptions::GenerateMipmaps));
+		glbase::Texture::ptr tex(new glbase::Texture());
+		tex->load("../Data/PlanetTextures/Plains.png", glbase::LoadOptions::GenerateMipmaps);
 		tex->generate_mipmaps();
 		set_texture(tex);
 	}

@@ -25,6 +25,7 @@
 //#define DISABLE_PLANET
 #define RENDER_DEBUG_ENABLED
 
+
 #if defined(RENDER_DEBUG_ENABLED)
 
 #define DEBUG_RENDER_OFF			0

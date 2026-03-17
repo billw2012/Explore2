@@ -20,7 +20,7 @@
 
 #include "Misc/statemachine.hpp"
 
-#include "Utils/Profiler.h"
+//#include "Utils/Profiler.h"
 
 namespace explore2 {;
 
@@ -495,7 +495,7 @@ private:
 	static glbase::VertexSpec::ptr _batchWaterVertexSpec;
 
 
-	utils::Profiler::block_handle _createChunkProfileBlock;
+	//utils::Profiler::block_handle _createChunkProfileBlock;
 
 #if defined(_DEBUG)
 	std::deque<State::type> _DEBUG_stateChanges;

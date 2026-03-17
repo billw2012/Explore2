@@ -320,7 +320,7 @@ vec3_type calculate_inner_integral(
 	vec3_type tPPa = beta * (tPPaFull - tPPaReminder);
 
 	float_type rhoP = get_density_ratio_rho(heightP, scaleHeight);
-	return rhoP * exp(-(tPPc + tPPa));
+	return exp(-(tPPc + tPPa)) * rhoP;
 }
 
 // Is - irradiance entering atmosphere

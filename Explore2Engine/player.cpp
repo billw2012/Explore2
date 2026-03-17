@@ -46,7 +46,7 @@ void Player::update( double dt )
 		pos = _camera->parent()->globalise(Transform::vec3_type(pos));
 	}
 
-	_pendingCollision = _solarSystem->collide(pos);
+	_pendingCollision = _solarSystem->collide(pos, 0.1);
 	//_ 
 	//if(_pendingCollision)
 	//{

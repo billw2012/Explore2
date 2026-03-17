@@ -901,7 +901,7 @@ bool ChunkLOD::create_geometry()
 	assert(!_waterMesh);
 	assert(!are_children_created());
 
-	_createChunkProfileBlock = utils::Profiler::start_block(CREATE_GEOMETRY_PROFILE, 50);
+	//_createChunkProfileBlock = utils::Profiler::start_block(CREATE_GEOMETRY_PROFILE, 50);
 
 	_buildingState = BuildingState::Building;
 
@@ -1158,7 +1158,7 @@ void ChunkLOD::check_built()
 		_normalTexture->generate_mipmaps();
 		_colourTexture->generate_mipmaps();
 
-		utils::Profiler::end_block(_createChunkProfileBlock);
+		//utils::Profiler::end_block(_createChunkProfileBlock);
 
 		_buildingState = BuildingState::Built;
 		return ;

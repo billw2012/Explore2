@@ -10,7 +10,7 @@
 
 #include "Misc/atomic.hpp"
 
-#include "misc/waithandle.hpp"
+#include "Misc/waithandle.hpp"
 
 namespace explore2 {;
 

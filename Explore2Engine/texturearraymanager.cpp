@@ -7,7 +7,7 @@ namespace explore2 {;
 
 void TextureArrayManager::init1D( const std::string& name, GLuint wid, GLuint depth, GLint components, GLenum format, GLenum type, GLenum internalFormat, bool mipmaps )
 {
-	_texture = glbase::Texture::ptr(new glbase::Texture(name));
+	_texture = glbase::Texture::ptr(new glbase::Texture(name.c_str()));
 
 	_texture->create2D(GL_TEXTURE_1D_ARRAY, wid, depth, components, format, type, NULL, internalFormat, mipmaps);
 
@@ -19,7 +19,7 @@ void TextureArrayManager::init1D( const std::string& name, GLuint wid, GLuint de
 
 void TextureArrayManager::init2D( const std::string& name, GLuint wid, GLuint height, GLuint depth, GLint components, GLenum format, GLenum type, GLenum internalFormat, bool mipmaps )
 {
-	_texture = glbase::Texture::ptr(new glbase::Texture(name));
+	_texture = glbase::Texture::ptr(new glbase::Texture(name.c_str()));
 
 	_texture->create3D(GL_TEXTURE_2D_ARRAY, wid, height, depth, components, format, type, NULL, internalFormat, mipmaps);
 
