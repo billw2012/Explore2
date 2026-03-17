@@ -51,6 +51,7 @@ set(INSTALL_DIR ${CMAKE_BINARY_DIR}/../bin)
 install(FILES ${shader_files} DESTINATION ${INSTALL_DIR}/../data/vice/shaders)
 
 add_library(Vice ${src_files} ${header_files} ${shader_files})
+target_link_libraries(Vice PUBLIC Boost::python Boost::filesystem)
 source_group(Shaders FILES ${shader_files})
 set(INSTALL_DIR ${CMAKE_BINARY_DIR}/../bin)
 install(FILES ${shader_files} DESTINATION ${INSTALL_DIR}/../data/vice/shaders)

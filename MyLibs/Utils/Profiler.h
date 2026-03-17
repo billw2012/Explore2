@@ -41,7 +41,7 @@ struct Profiler
 	//static void start_block(const std::string& blockName, size_t historyLen);
 	//static void end_block(const std::string& blockName);
 	//static std::shared_ptr<void> scoped_block(const std::string& blockName, size_t historyLen);
-	typedef std::auto_ptr<ProfileBlock> block_handle;
+	typedef std::unique_ptr<ProfileBlock> block_handle;
 
 	static block_handle start_block(const std::string& blockName, size_t historyLen);
 	static void end_block(block_handle& blockHandle);

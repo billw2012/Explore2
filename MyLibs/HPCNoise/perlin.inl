@@ -14,7 +14,7 @@ namespace HPCNoise {;
 // }
 
 template < class FloatTy_ >
-void Noise<FloatTy_>::add_octave(const OctavePtr& octave, size_t count = 1)
+void Noise<FloatTy_>::add_octave(const OctavePtr& octave, size_t count)
 {
 	for(size_t idx = 0; idx < count; ++idx)
 		_octaves.push_back(octave);

@@ -1,6 +1,7 @@
 #ifndef _VECTOR4_HPP
 #define _VECTOR4_HPP
 
+#include <ostream>
 #include "Misc/libdesc.hpp"
 #include "Misc/hash.hpp"
 

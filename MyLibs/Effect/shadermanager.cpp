@@ -113,7 +113,7 @@ bool parse_once(std::string line)
 
 path make_path_global(const path& apath, const path& currDir)
 {
-	if(apath.is_complete())
+	if(apath.is_absolute())
 		return apath;
 	assert(apath.has_relative_path());
 	return currDir / apath;

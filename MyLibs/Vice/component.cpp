@@ -4,6 +4,7 @@
 #include <boost/range.hpp>
 #include <boost/range/algorithm.hpp>
 #include <boost/filesystem/operations.hpp>
+#include <boost/container_hash/hash.hpp>
 
 // external
 #include "tinyxml.h"

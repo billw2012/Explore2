@@ -2,8 +2,9 @@
 #define _RENDER_SDLGL_HPP
 
 #include <stdexcept>
+#include <windows.h>
 //#define GL_GLEXT_PROTOTYPES
-#define NO_SDL_GLEXT 
+#define NO_SDL_GLEXT
 #define GLEW_NO_GLU
 #include <gl/glew.h>
 #include <SDL.h>

@@ -102,13 +102,13 @@ struct AlignedAllocator
 
 // allocator TEMPLATE OPERATORS
 template < class _Ty, class _Other > force_inline
-bool operator==(const AlignedAllocator<_Ty>&, const AlignedAllocator<_Other>&) _THROW0()
+bool operator==(const AlignedAllocator<_Ty>&, const AlignedAllocator<_Other>&) noexcept
 {	// test for allocator equality (always true)
 	return (true);
 }
 
 template < class _Ty, class _Other > force_inline
-bool operator!=(const AlignedAllocator<_Ty>&, const AlignedAllocator<_Other>&) _THROW0()
+bool operator!=(const AlignedAllocator<_Ty>&, const AlignedAllocator<_Other>&) noexcept
 {	// test for allocator inequality (always false)
 	return (false);
 }
@@ -215,8 +215,8 @@ struct SSETraits<double>
 #pragma warning(disable : 4799)
 	static force_inline sse_type round(sse_type x)
 	{
-		// convert to int and then back to double
-		return _mm_cvtpi32_pd(_mm_cvtpd_pi32(x));
+		// convert to int and then back to double (SSE2, x64-compatible)
+		return _mm_cvtepi32_pd(_mm_cvtpd_epi32(x));
 	}
 #pragma warning(default : 4799)
 

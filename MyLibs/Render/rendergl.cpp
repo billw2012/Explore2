@@ -78,8 +78,8 @@ struct GeometryWithRange
 
 struct GeometryWithDistanceLessThanFTB
 {
-	bool operator()(const GeometryWithRange& left, 
-		const GeometryWithRange& right)
+	bool operator()(const GeometryWithRange& left,
+		const GeometryWithRange& right) const
 	{
 		if(left.geometry->get_material()->get_effect() < right.geometry->get_material()->get_effect())
 			return true;
@@ -117,8 +117,8 @@ struct GeometryWithDistanceLessThanFTB
 
 struct GeometryWithDistanceLessThanBTF
 {
-	bool operator()(const GeometryWithRange& left, 
-		const GeometryWithRange& right)
+	bool operator()(const GeometryWithRange& left,
+		const GeometryWithRange& right) const
 	{
 		if(left.geometry->get_material()->get_effect() < right.geometry->get_material()->get_effect())
 			return true;
@@ -162,8 +162,8 @@ typedef std::set< GeometryWithRange > UnsortedGeometrySet;
 
 struct GeometryWithDistanceLessThanFTBDepth
 {
-	bool operator()(const GeometryWithRange& left, 
-		const GeometryWithRange& right)
+	bool operator()(const GeometryWithRange& left,
+		const GeometryWithRange& right) const
 	{
 		if(left.distance < right.distance)
 			return true;

@@ -3,8 +3,8 @@ namespace math {;
 
 template < class FTy_, class SCTy_, class NPTy_ >
 SpatialNoiseGenerator<FTy_, SCTy_, NPTy_>::SpatialNoiseGenerator(
-						const noise_provider& noisep, const spectral_composer* sc, 
-						value_type lacunarity, value_type octaves, value_type h = 1.0) 
+						const noise_provider& noisep, const spectral_composer* sc,
+						value_type lacunarity, value_type octaves, value_type h)
 					  : _threadData(1),
 #ifdef ENABLE_SSE
 					  _useSSE(true), 
@@ -64,8 +64,8 @@ typename SpatialNoiseGenerator<FTy_, SCTy_, NPTy_>::value_type
 
 // finish converting to template choose between sse and sse2.
 template < class FTy_, class SCTy_, class NPTy_ >
-void SpatialNoiseGenerator<FTy_, SCTy_, NPTy_>::eval(SSEVectorType& results, const SIMDSoAVector3Type& v, 
-		  value_type vscale = 1) const
+void SpatialNoiseGenerator<FTy_, SCTy_, NPTy_>::eval(SSEVectorType& results, const SIMDSoAVector3Type& v,
+		  value_type vscale) const
 {
 	results.resize(v.size());
 	if(v.size() == 0)
@@ -138,8 +138,8 @@ void SpatialNoiseGenerator<FTy_, SCTy_, NPTy_>::eval(SSEVectorType& results, con
 
 // finish converting to template choose between sse and sse2.
 template < class FTy_, class SCTy_, class NPTy_ >
-void SpatialNoiseGenerator<FTy_, SCTy_, NPTy_>::eval(SSEVectorType& results, const SIMDSoAVector2Type& v, 
-													 value_type vscale = 1) const
+void SpatialNoiseGenerator<FTy_, SCTy_, NPTy_>::eval(SSEVectorType& results, const SIMDSoAVector2Type& v,
+													 value_type vscale) const
 {
 	results.resize(v.size());
 	if(v.size() == 0)

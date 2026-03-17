@@ -4,6 +4,7 @@
 // stl
 #include <stdexcept>
 #include <map>
+#include <vector>
 #include <sstream>
 
 // boost

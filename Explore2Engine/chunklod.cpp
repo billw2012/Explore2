@@ -364,7 +364,7 @@ ChunkLOD::Errors ChunkLOD::calculate_errors(const Vector3f& localCameraPos, Erro
 
 	float offs = 0.0001f;
 	Errors childErrors;
-	childErrors.show = std::min(std::pow(_childError, 2) * shortestD_2_recip + offs, errors.show);
+	childErrors.show = std::min((float)(std::pow(_childError, 2) * shortestD_2_recip + offs), errors.show);
 	childErrors.create = std::max((errors.show + childErrors.show) * 0.5f, childErrors.show);
 	return childErrors;
 }

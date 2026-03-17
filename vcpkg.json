@@ -1,0 +1,22 @@
+{
+  "name": "explore2",
+  "version": "0.0.1",
+  "dependencies": [
+    "sdl2",
+    "glew",
+    "tinyxml",
+    "devil",
+    "boost-thread",
+    "boost-filesystem",
+    "boost-serialization",
+    "boost-asio",
+    "boost-variant",
+    "boost-algorithm",
+    "boost-bind",
+    "boost-function",
+    "boost-smart-ptr",
+    "boost-range",
+    "boost-random",
+    "boost-python"
+  ]
+}

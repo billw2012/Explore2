@@ -86,8 +86,8 @@ struct /*REMOTE_API*/ RemoteDebug
 	static const unsigned short PORT;
 
 	// create as debugger (client)
-	RemoteDebug(Debugger_t, const boost::asio::ip::address& gameIP = 
-		boost::asio::ip::address::from_string("127.0.0.1"));
+	RemoteDebug(Debugger_t, const boost::asio::ip::address& gameIP =
+		boost::asio::ip::make_address("127.0.0.1"));
 
 	// create as game (server)
 	RemoteDebug(Game_t);
@@ -167,8 +167,8 @@ struct /*REMOTE_API*/ RemoteDebug
 
 	static void create_instance(Game_t);
 
-	static void create_instance(Debugger_t, const boost::asio::ip::address& gameIP = 
-		boost::asio::ip::address::from_string("127.0.0.1"));
+	static void create_instance(Debugger_t, const boost::asio::ip::address& gameIP =
+		boost::asio::ip::make_address("127.0.0.1"));
 
 	static void destroy();
 
@@ -187,7 +187,7 @@ private:
 private:
 	static std::shared_ptr<RemoteDebug> _instance;
 	
-	boost::asio::io_service _ioService;
+	boost::asio::io_context _ioService;
 	SocketPtr _clientSocket;
 	std::shared_ptr<boost::asio::ip::tcp::acceptor> _acceptor;
 	boost::asio::ip::tcp::endpoint _gameIP;

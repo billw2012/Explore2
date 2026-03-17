@@ -262,15 +262,15 @@ int main(int argc, char* argv[])
 	SDLGl::initSDL();
 	cout << "Initializing OpenGL window ..." << endl;
 #if defined(_DEBUG)
-	SDLGl::initOpenGL(1280, 720, 32, false);
+	SDLGl::initOpenGL(1280, 720, false);
 #else
-	SDLGl::initOpenGL(1920, 1080, 32, false);
+	SDLGl::initOpenGL(1920, 1080, false);
 #endif
 
  	if(glewIsSupported("GL_ARB_debug_output"))
 	{
 		//glDebugMessageControl(GL_DONT_CARE, GL_DONT_CARE, GL_DONT_CARE, 0, NULL, GL_TRUE);
- 		glDebugMessageCallback(gl_debug_callback, NULL);
+ 		glDebugMessageCallback(reinterpret_cast<GLDEBUGPROC>(gl_debug_callback), NULL);
 	}
 	//else if(glewIsSupported("GL_AMD_debug_output"))
 	//	glDebugMessageCallbackAMD(gl_debug_callback_amd, NULL);
@@ -285,8 +285,8 @@ int main(int argc, char* argv[])
 
 	static const double NEAR_PLANE = 0.001 * WORLD_SCALE;
 	static const double FAR_PLANE = 500000000 * WORLD_SCALE;
-	effect::ShaderManager::set_define("NEAR_PLANE", (float)NEAR_PLANE);
-	effect::ShaderManager::set_define("FAR_PLANE", (float)FAR_PLANE);
+	effect::ShaderManager::set_define("NEAR_PLANE", effect::ShaderManager::define_variant_type((float)NEAR_PLANE));
+	effect::ShaderManager::set_define("FAR_PLANE", effect::ShaderManager::define_variant_type((float)FAR_PLANE));
 
 	auto scopedSolarSystem = SolarSystem::static_init();
 	auto scopedRender = RenderGL::static_init();
